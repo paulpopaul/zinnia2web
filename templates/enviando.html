@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% block title %}Gracias.. Redireccionando..{% endblock %}
+{% block main %}
+    <div class="container">
+        <h3 class="">¡Gracias!</h3>
+        <div class="row">
+            <div class="col s12">
+                <h4>Su solicitud de contacto ha sido enviada exitosamente, Redireccionando :)...</h4>
+            </div>
+            <script>
+                function redireccionarPagina() {
+                    window.location = "/";
+                }
+                setTimeout("redireccionarPagina()", 3000);
+            </script>
+        </div>
+    </div>
+{% endblock %}

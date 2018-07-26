@@ -1,0 +1,849 @@
+<!-- Perfil -->
+{% extends "zinnia/base.html" %}
+{% load i18n %}
+{% load zinnia %}
+{% load comments %}
+    {% load staticfiles %}
+    {% load static %}
+<!-- Etiquetas Meta-->
+{% block title %}{{ object.title }}{% endblock title %}
+{% block meta-description %}{{ object.excerpt|safe }}{% endblock meta-description %}
+{% block meta-keywords %}{% if object.tags %}{{ object.tags }}{% else %}{{ block.super }}{% endif %}{% endblock meta-keywords %}
+<!-- fin Etiquetas Meta-->
+
+
+
+{% block content %}
+            <header>
+            <nav  class="navbar  bg-color19 pb-2 d-sm-none d-sm-block ">
+            </nav>
+            <nav class="navbar bg-color15 navbar-expand-md top-bar navbar-static-top  sps--abv">
+                <div class="container">
+                    <a class="navbar-toggler header__toggle-menu   navbar-toggler-right" title="Menu" data-toggle="modal" data-target="#menuModal" ><link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><i class=" ion-navicon"></i></a>
+                <a href="{% url 'index' %}"><img class="img-fluid-marca nav-bar-marca" src={% static 'index/img/divina-men2.svg' %}></a>
+                <nav class=" header__nav-wrap ">
+                <h2 class="header__nav-heading h6">NAVEGACIÓN</h2>
+                <ul class="header__nav">
+                    <li><a href="{% url 'index' %}" title="">PORTADA</a></li>
+                    <li class="current has-children">
+                        <a href="#0" title="">CIUDADES</a>
+                        <ul class="sub-menu">
+                            <li><a href="{% url 'index' %}">RANCAGUA</a></li>
+                            <li><a href="{% url 'index' %}">CURICÓ</a></li>
+                            <li><a href="{% url 'index' %}">TALCA</a></li>
+                            <li><a href="{% url 'index' %}">CONCEPCIÓN</a></li>
+                            <li><a href="{% url 'index' %}">CHIILLÁN</a></li>
+                            <li><a href="{% url 'index' %}">LOS ANGELES</a></li>
+                            <li><a href="{% url 'index' %}">TEMUCO</a></li>
+                            <li><a href="{% url 'index' %}">PUCÓN</a></li>
+                            <li><a href="{% url 'index' %}">VALDIVIA</a></li>
+                            <li><a href="{% url 'index' %}">OSORNO</a></li>
+                            <li><a href="{% url 'index' %}">PUERTO MONTT</a></li>
+                            <li><a href="{% url 'index' %}">CASTRO</a></li>
+                        </ul>
+                    </li>
+                    <li><a href='{% url 'contacto' %}' title="">CONTACTO</a></li>
+                </ul>
+                <a href=""><img class=" img-fluid-marca-nav header__nav-heading " src={% static 'index/img/divina-menu.svg' %}></a>
+                <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+                </nav>
+                </div>
+            </nav>
+        </header>
+        <div class="container-fluid city-content-dos bg-color1">
+            <div class="row">
+                <div class="col-12">
+                    <h6 class="scort-text">Scort en</h6>
+                    <h6 class="city-text text-uppercase">{{ category }}{{ entry.ciudadheader }}</h6>
+
+                    <h6 class="text-uppercase perfil-categoriass">Categoria > {{ entry.categoriass }} </h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid bg-color1 ">
+
+            <div class="row justify-content-center ">
+                {% block entry-image2 %}
+                    {% if object.image2 %}
+                        <div class="elemento-padre ">
+                            <img class="elemento-hijo" src="{{ object.image2.url }}"/>
+                         </div>
+                    {% endif %}
+                {% endblock entry-image2 %}
+            </div>
+            <div class="row justify-content-center">
+                {% block entry-title %}
+                    {% if object.title %}
+                        <div class="">
+                            <h6 class="text-uppercase perfil-nombre">{{ entry.title }} </h6>
+
+                        <h6 class="perfil-edad"> </h6>
+                        </div>
+                    {% endif %}
+                {% endblock entry-title %}
+            </div>
+
+            <div class="row">
+
+                {% block entry-edad %}
+                    {% if object.edad %}
+                        <div class="col perfil-edad-box">
+                            <h6 class="perfil-edad">Edad:</h6>
+                            <h6 class="perfil-anos">{{ entry.edad }} años</h6>
+
+                        </div>
+                    {% endif %}
+                {% endblock entry-edad %}
+
+            </div>
+
+            <div class="row">
+                {% block entry-content %}
+                    {% if object.content %}
+                        <div class="col perfil-descrip-box">
+                            <h6 class="perfil-sobremi">Sobre mi</h6>
+                            <h6 class="perfil-descrip">{{ entry.content }}</h6>
+
+                        </div>
+                    {% endif %}
+                {% endblock entry-content %}
+
+            </div>
+
+            <div class="row">
+            <div class="col perfil-atributos-box">
+
+            {% block entry-nacionalidad %}
+                {% if object.nacionalidad %}
+                    <h6 class="text-uppercase perfil-atributos">{{ entry.nacionalidad }}</h6>
+                    <h6 class="text-uppercase perfil-atributos-separador"> | </h6>
+                {% endif %}
+            {% endblock entry-nacionalidad %}
+
+            {% block entry-tez %}
+                {% if object.tez %}
+                    <h6 class="text-uppercase perfil-atributos" >{{ entry.tez }}</h6>
+                    <h6 class="text-uppercase perfil-atributos-separador"> | </h6>
+                {% endif %}
+            {% endblock entry-tez %}
+
+            {% block entry-altura %}
+                {% if object.altura %}
+                    <h6 class="text-uppercase perfil-atributos" >{{ entry.altura }} CM</h6>
+                    <h6 class="text-uppercase perfil-atributos-separador"> | </h6>
+                {% endif %}
+            {% endblock entry-altura %}
+
+            {% block entry-peso %}
+                {% if object.peso %}
+                    <h6 class="text-uppercase perfil-atributos" >{{ entry.peso }} KG</h6>
+                    <h6 class="text-uppercase perfil-atributos-separador"> | </h6>
+                {% endif %}
+            {% endblock entry-peso %}
+
+            {% block entry-busto %}
+                {% if object.busto %}
+                    <h6 class="text-uppercase perfil-atributos" >{{ entry.busto }}-{{ entry.cintura }}-{{ entry.cadera }} XZY</h6>
+                    <h6 class="text-uppercase perfil-atributos-separador"> | </h6>
+                {% endif %}
+            {% endblock entry-busto %}
+
+                {% block entry-contextura %}
+                    {% if object.contextura %}
+                        <h6 class="text-uppercase perfil-atributos"> {{ entry.get_contextura_display }}</h6>
+                    {% endif %}
+            {% endblock entry-contextura %}
+
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class=" perfil-atributosdos-box ">
+                {% block entry-ojos %}
+                    {% if object.ojos %}
+                        <h6 class="perfil-atributosdos">Ojos {{ entry.get_ojos_display }}</h6>
+                    {% endif %}
+                {% endblock entry-ojos %}
+
+                {% block entry-cabello %}
+                    {% if object.nacionalidad %}
+                        <h6 class="perfil-atributosdos">Cabello {{ entry.get_cabello_display }}</h6>
+                    {% endif %}
+                {% endblock entry-cabello %}
+
+                {% block entry-busto2 %}
+                    {% if object.busto2 %}
+                        <h6 class="perfil-atributosdos">Busto {{ entry.get_busto2_display }}</h6>
+                    {% endif %}
+                {% endblock entry-busto2 %}
+
+                {% block entry-cola %}
+                    {% if object.cola %}
+                        <h6 class="perfil-atributosdos">Cola {{ entry.get_cola_display }}</h6>
+                    {% endif %}
+                {% endblock entry-cola %}
+
+                {% block entry-depilacion %}
+                    {% if object.depilacion %}
+                        <h6 class="perfil-atributosdos">{{ entry.get_depilacion_display }}</h6>
+                    {% endif %}
+                {% endblock entry-depilacion %}
+
+                {% block entry-idiomauno %}
+                    {% if object.idiomauno %}
+                        <h6 class="perfil-atributosdos">{{ entry.get_idiomauno_display }}</h6>
+                    {% endif %}
+                {% endblock entry-idiomauno %}
+
+                {% block entry-idiomados %}
+                    {% if object.idiomados %}
+                            <h6 class="perfil-atributosdos">{{ entry.get_idiomados_display }}</h6>
+                    {% endif %}
+                {% endblock entry-idiomados %}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class=" bg-color4">
+        <div class="row perfil-telefono-box ">
+            <div class="col-12 pb-3">
+
+                {% block entry-concelular %}
+                    {% if object.concelular %}
+                        <a class="perfil-telefono-green pulse-button" href="tel:+56 {{ entry.concelular }} "><link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><i class="  ion-ios7-telephone"></i></a>
+
+                    {% endif %}
+                {% endblock entry-concelular %}
+
+            </div>
+            <div class="col-12 ">
+
+                {% block entry-concelular2 %}
+                    {% if object.concelular %}
+                        <h6 class="perfil-precio-3">Teléfono:</h6>
+                        <a class="perfil-precio2" href="tel:+56 {{ entry.concelular }} ">+56 {{ entry.concelular }} </a>
+                         <h6 class="perfil-atiendo-content">utilizo whatsapp</h6>
+                    {% endif %}
+                {% endblock entry-concelular2 %}
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-color1" >
+        <div class="tz-gallery container ">
+            <div class="row">
+                    <div class="col-12">
+                        <h6 class="perfil-geleria-header">Galería</h6>
+                        <h6 class="perfil-galeria-content">{{ entry.title }} {{ entry.modeloretoque }}.</h6>
+                    </div>
+                {% block entry-imagal1 %}
+                {% if object.imagal1 %}
+                    <div class="col-4 col-md-4 blackboxf ">
+                        <a class=" lightbox blackboxc " href="{{ object.imagal1.url }}"><img src="{{ object.imagal1.url }}" ></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal1 %}
+
+                {% block entry-imagal2 %}
+                {% if object.imagal2 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal2.url }}"><img src="{{ object.imagal2.url }}" ></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal2 %}
+
+                {% block entry-imagal3 %}
+                {% if object.imagal3 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal3.url }}"><img src="{{ object.imagal3.url }}" ></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal3 %}
+
+                {% block entry-imagal4 %}
+                {% if object.imagal4 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal4.url }}"><img src="{{ object.imagal4.url }}" ></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal4 %}
+
+                {% block entry-imagal5 %}
+                {% if object.imagal5 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal5.url }}"><img src="{{ object.imagal5.url }}" ></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal5 %}
+
+                {% block entry-imagal6 %}
+                {% if object.imagal6 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal6.url }}"><img src="{{ object.imagal6.url }}" ></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal6 %}
+
+                {% block entry-imagal7 %}
+                {% if object.imagal7 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal7.url }}"><img src="{{ object.imagal7.url }}" ></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal7 %}
+
+                {% block entry-imagal8 %}
+                {% if object.imagal8 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal8.url }}"><img src="{{ object.imagal8.url }}" ></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal8 %}
+
+                {% block entry-imagal9 %}
+                {% if object.imagal9 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal9.url }}">
+                            <img src="{{ object.imagal9.url }}">
+                        </a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal9 %}
+
+                {% block entry-imagal10 %}
+                {% if object.imagal10 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal10.url }}"><img src="{{ object.imagal10.url }}"></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal10 %}
+
+                {% block entry-imagal11 %}
+                {% if object.imagal11 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal11.url }}"><img src="{{ object.imagal11.url }}"></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal11 %}
+
+                {% block entry-imagal12 %}
+                {% if object.imagal12 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal12.url }}"><img src="{{ object.imagal12.url }}"></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal12 %}
+
+                {% block entry-imagal13 %}
+                {% if object.imagal13 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal13.url }}"><img src="{{ object.imagal13.url }}"></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal13 %}
+
+                {% block entry-imagal14 %}
+                {% if object.imagal14 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal14.url }}"><img src="{{ object.imagal14.url }}"></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal14 %}
+
+                {% block entry-imagal15 %}
+                {% if object.imagal15 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal15.url }}"><img src="{{ object.imagal15.url }}"></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal15 %}
+
+                {% block entry-imagal16 %}
+                {% if object.imagal16 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal16.url }}"><img src="{{ object.imagal16.url }}"></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal16 %}
+
+                {% block entry-imagal17 %}
+                {% if object.imagal17 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal17.url }}"><img src="{{ object.imagal17.url }}"></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal17 %}
+
+                {% block entry-imagal18 %}
+                {% if object.imagal18 %}
+                    <div class="col-4 col-md-4 blackboxf">
+                        <a class="lightbox blackboxc" href="{{ object.imagal18.url }}"><img src="{{ object.imagal18.url }}"></a>
+                    </div>
+                {% endif %}
+                {% endblock entry-imagal18 %}
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-color1">
+        <div class="row perfil-precio-box">
+
+            <div class="col-12 pt-3 pb-3 ">
+                {% block entry-convalor2 %}
+                    {% if object.convalor %}
+                        <a class="perfil-precio-gold " href="#"><link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><i class="    ion-social-usd"></i></a>
+                    {% endif %}
+                {% endblock entry-convalor2 %}
+            </div>
+
+            <div class="col-12">
+                {% block entry-convalor %}
+                    {% if object.convalor %}
+                        <h6 class="perfil-precio-3">$ {{ entry.convalor }}</h6>
+                        <h6 class="perfil-servicio-content">por hora</h6>
+                    {% endif %}
+                {% endblock entry-convalor %}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid bg-color4">
+        <div class="row perfil-servicio-box">
+            <div class="col-12">
+
+                <h6 class="perfil-servicio-content">Algunos servicios podrían tener un costo adicional</h6>
+            </div>
+            <div class="col-6 verticalline">
+            {% block entry-atencion_pareja %}
+                  {% if object.atencion_pareja %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_atencion_pareja_display }}</h6>
+                    </div>
+                    {% endif %}
+            {% endblock entry-atencion_pareja %}
+
+            {% block entry-atencion_mujeres %}
+                {% if object.atencion_mujeres %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_atencion_mujeres_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-atencion_mujeres %}
+
+            {% block entry-atencion_discapaci %}
+                {% if object.atencion_discapaci %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_atencion_discapaci_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-atencion_discapaci %}
+
+            {% block entry-servicio_griego %}
+                {% if object.servicio_griego %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_servicio_griego_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-servicio_griego %}
+
+            {% block entry-frances_natural %}
+                {% if object.frances_natural %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_frances_natural_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-frances_natural %}
+
+            {% block entry-sexo_oral %}
+                {% if object.sexo_oral %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_sexo_oral_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-sexo_oral %}
+
+            {% block entry-lesbico %}
+                {% if object.lesbico %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_lesbico_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-lesbico %}
+
+                        {% block entry-besos_novia %}
+                {% if object.besos_novia %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_besos_novia_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-besos_novia %}
+
+            {% block entry-juguetes_eroticos %}
+                {% if object.juguetes_eroticos %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_juguetes_eroticos_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-juguetes_eroticos %}
+
+            {% block entry-cuadro_plastico %}
+                {% if object.cuadro_plastico %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_cuadro_plastico_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-cuadro_plastico %}
+
+            {% block entry-despedida_soltero %}
+                {% if object.despedida_soltero %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_despedida_soltero_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-despedida_soltero %}
+
+            {% block entry-viajess %}
+                {% if object.viajess %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_viajess_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-viajess %}
+
+            {% block entry-sadismo %}
+                {% if object.sadismo %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_sadismo_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-sadismo %}
+
+
+            {% block entry-servicio_adicional_uno %}
+                {% if object.servicio_adicional_uno %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.servicio_adicional_uno }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-servicio_adicional_uno %}
+
+            </div>
+            <div class="col-6 verticalline-two">
+
+            {% block entry-garganta_profunda %}
+                {% if object.garganta_profunda %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_garganta_profunda_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-garganta_profunda %}
+
+            {% block entry-duales_trios %}
+                {% if object.duales_trios %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_duales_trios_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-duales_trios %}
+
+
+            {% block entry-americanaa %}
+                {% if object.americanaa %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_americanaa_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-americanaa %}
+
+            {% block entry-americana_corporal %}
+                {% if object.americana_corporal %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_americana_corporal_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-americana_corporal %}
+
+            {% block entry-masajes %}
+                {% if object.masajes %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_masajes_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-masajes %}
+
+                    {% block entry-baile_erotico %}
+                {% if object.baile_erotico %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.get_baile_erotico_display }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-baile_erotico %}
+
+
+            {% block entry-servicio_adicional_dos %}
+                {% if object.servicio_adicional_dos %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.servicio_adicional_dos }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-servicio_adicional_dos %}
+
+            {% block entry-servicio_adicional_tres %}
+                {% if object.servicio_adicional_tres %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.servicio_adicional_tres }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-servicio_adicional_tres %}
+
+            {% block entry-servicio_adicional_cuatro %}
+                {% if object.servicio_adicional_cuatro %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.servicio_adicional_cuatro }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-servicio_adicional_cuatro %}
+
+
+            {% block entry-servicio_adicional_cinco %}
+                {% if object.servicio_adicional_cinco %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.servicio_adicional_cinco }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-servicio_adicional_cinco %}
+
+            {% block entry-servicio_adicional_seis %}
+                {% if object.servicio_adicional_seis %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.servicio_adicional_seis }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-servicio_adicional_seis %}
+
+            {% block entry-servicio_adicional_siete %}
+                {% if object.servicio_adicional_siete %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.servicio_adicional_siete }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-servicio_adicional_siete %}
+
+            {% block entry-servicio_adicional_ocho %}
+                {% if object.servicio_adicional_ocho %}
+                    <div class="col ">
+                        <h6 class="perfil-servicio-tipo">{{ entry.servicio_adicional_ocho }}</h6>
+                    </div>
+                {% endif %}
+            {% endblock entry-servicio_adicional_ocho %}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid bg-color4">
+        <div class="row perfil-atiendo-box">
+            <div class="col-12">
+                <h6 class="perfil-atiendo-header">Atención</h6>
+                <h6 class="perfil-atiendo-content">Flexible para mayor comodidad.</h6>
+            </div>
+            <div class="col ">
+                {% block entry-atiendeuno %}
+                    {% if object.atiendeuno %}
+                        <h6 class="perfil-atiendo ">{{ entry.get_atiendeuno_display }}  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><i class="perfil-atiendo-green ion-checkmark"></i></h6>
+                    {% endif %}
+                {% endblock entry-atiendeuno %}
+
+                {% block entry-atiendedos %}
+                    {% if object.atiendedos %}
+                        <h6 class="perfil-atiendo">{{ entry.get_atiendedos_display }}  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><i class="perfil-atiendo-green ion-checkmark"></i></h6>
+
+                    {% endif %}
+                {% endblock entry-atiendedos %}
+
+                {% block entry-atiendetres %}
+                    {% if object.atiendetres %}
+                        <h6 class="perfil-atiendo">{{ entry.get_atiendetres_display }}  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><i class="perfil-atiendo-green ion-checkmark"></i></h6>
+
+                    {% endif %}
+                {% endblock entry-atiendetres %}
+
+                {% block entry-atiendecuatro %}
+                    {% if object.atiendecuatro %}
+                        <h6 class="perfil-atiendo">{{ entry.get_atiendecuatro_display }}  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><i class="perfil-atiendo-green ion-checkmark"></i></h6>
+
+                    {% endif %}
+                {% endblock entry-atiendecuatro %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-fluid bg-color1">
+        <div class="row perfil-horario-box ">
+            <div class="col-12">
+                <h6 class="perfil-atiendo-header">Horario</h6>
+                <h6 class="perfil-atiendo-content">Disponiblidad relativa, recuerda siempre confirmar.</h6>
+            </div>
+
+                {% block entry-dialunes %}
+                    {% if object.dialunes %}
+                         <div class="col ">
+                            <h6 class="perfil-horario-dia">Lun</h6>
+                            <h6 class="perfil-horario-atencion">{{ entry.get_dialunes_display }}</h6>
+                        </div>
+                    {% endif %}
+                {% endblock entry-dialunes %}
+
+
+                {% block entry-diamartes %}
+                    {% if object.diamartes %}
+                         <div class="col ">
+                            <h6 class="perfil-horario-dia">Mar</h6>
+                            <h6 class="perfil-horario-atencion">{{ entry.get_diamartes_display }}</h6>
+                         </div>
+                    {% endif %}
+                {% endblock entry-diamartes %}
+
+
+
+                {% block entry-diamiercoles %}
+                    {% if object.diamiercoles %}
+                    <div class="col">
+                        <h6 class="perfil-horario-dia">Mié</h6>
+                        <h6 class="perfil-horario-atencion">{{ entry.get_diamiercoles_display }}</h6>
+                    </div>
+                    {% endif %}
+                {% endblock entry-diamiercoles %}
+
+
+                {% block entry-diajueves %}
+                    {% if object.diajueves %}
+                        <div class="col ">
+                            <h6 class="perfil-horario-dia">Jue</h6>
+                            <h6 class="perfil-horario-atencion">{{ entry.get_diajueves_display }}</h6>
+                        </div>
+                    {% endif %}
+                {% endblock entry-diajueves %}
+
+
+
+                {% block entry-diaviernes %}
+                    {% if object.diaviernes %}
+                        <div class="col ">
+                            <h6 class="perfil-horario-dia">Vie</h6>
+                            <h6 class="perfil-horario-atencion">{{ entry.get_diaviernes_display }}</h6>
+                        </div>
+                    {% endif %}
+                {% endblock entry-diaviernes %}
+
+
+
+                {% block entry-diasabado %}
+                    {% if object.diasabado %}
+                    <div class="col ">
+                        <h6 class="perfil-horario-dia-dos">Sáb</h6>
+                        <h6 class="perfil-horario-atencion">{{ entry.get_diasabado_display }}</h6>
+                    </div>
+                    {% endif %}
+                {% endblock entry-diasabado %}
+
+
+
+                {% block entry-diadomingo %}
+                    {% if object.diadomingo %}
+                    <div class="col ">
+                        <h6 class="perfil-horario-dia-dos">Dom</h6>
+                        <h6 class="perfil-horario-atencion">{{ entry.get_diadomingo_display }}</h6>
+                    </div>
+                    {% endif %}
+                {% endblock entry-diadomingo %}
+        </div>
+    </div>
+
+
+        <div class="container-fluid bg-color1">
+        <div class="row perfil-precio-box">
+
+
+            <div class="col-12 pt-3 pb-3 ">
+                {% block entry-examenaldia2 %}
+                    {% if object.examenaldia %}
+                        <a class="examen-aldia-logo " href="#"><link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><i class="    ion-heart"></i></a>
+                    {% endif %}
+                {% endblock entry-examenaldia2 %}
+            </div>
+
+            <div class="col-12">
+                {% block entry-examenaldia %}
+                    {% if object.examenaldia %}
+
+                        <h6 class="perfil-precio-3">Exámen Médico</h6>
+                        <h6 class="perfil-servicio-content">{{ entry.get_examenaldia_display }}</h6>
+                    {% endif %}
+                {% endblock entry-examenaldia %}
+            </div>
+        </div>
+    </div>
+
+
+<nav class="navbar  bg-color20 pb-0 d-sm-none d-sm-block ">
+            </nav>
+    <div class="container-fluid bg-color9 foo"  >
+    <div class="row perfil-ciudades-box ">
+            <div class="col-12  ">
+                <h6 class="perfil-ciudades-header">CIUDADES</h6>
+            </div>
+
+            <div class="col-auto">
+                <a href="{% url 'index' %}" class="btn btn-transparent-white" role="button">RANCAGUA</a>
+            </div>
+            <div class="col-auto">
+                <a href="{% url 'index' %}"class="btn btn-transparent-white" role="button">CURICO</a>
+            </div>
+            <div class="col-auto">
+                <a href="{% url 'index' %}" class="btn btn-transparent-white" role="button">TALCA</a>
+            </div>
+            <div class="col-auto">
+                <a href="{% url 'index' %}" class="btn btn-transparent-white" role="button">CONCEPCION</a>
+            </div>
+            <div class="col-auto">
+                <a href="{% url 'index' %}" class="btn btn-transparent-white">CHILLAN</a>
+            </div>
+            <div class="col-auto">
+                <a href="{% url 'index' %}" class="btn btn-transparent-white">LOS ANGELES</a>
+            </div>
+            <div class="col-auto">
+                <a href="{% url 'index' %}" class="btn btn-transparent-white">TEMUCO</a>
+            </div>
+            <div class="col-auto">
+                <a href="{% url 'index' %}" class="btn btn-transparent-white">PUCON</a>
+            </div>
+            <div class="col-auto">
+                <a  href="{% url 'index' %}" class="btn btn-transparent-white">VALDIVIA</a>
+            </div>
+            <div class="col-auto">
+                <a href="{% url 'index' %}" class="btn btn-transparent-white">OSORNO</a>
+            </div>
+            <div class="col-auto">
+                <a href="{% url 'index' %}" class="btn btn-transparent-white">PUERTO MONTT</a>
+            </div>
+            <div class="col-auto">
+                <a href="{% url 'index' %}" class="btn btn-transparent-white">CASTRO</a>
+            </div>
+    </div>
+    </div>
+
+
+
+
+{% endblock content %}

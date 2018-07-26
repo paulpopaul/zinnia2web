@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load staticfiles %}
+    {% load static %}
+        <meta charset="UTF-8">
+        <title> DivinaSur | CL</title>
+        <meta name="robots" content="follow, all" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="{% block meta-description %}El Portal escort más importante de Chile, Encuentra las mejores Escorts y Acompañantes en tu ciudad en DivinaSur.{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
+        <meta name="keywords" content="{% block meta-keywords %}escort rancagua, escort curico, escort talca, escort concepcion, escort chillan, escort los angeles, escort temuco, escort pucon, escort valdivia, escort osorno, escort puerto montt, escort castro, putas chilenas, putas argentinas, putas paraguayas, escort chile, escort, divinasur, sexo, chile, rancagua, curico, talca, chillan, los angeles, temuco, pucon, valdivia, osorno, puerto montt, castro, putas, prostitutas, divinasur.cl, www.divinasur.cl, acompañantes, mujeres, anfitrionas, escortschile, escortschile, striper, sex, amor, intimidad, sexual, coito, relación sexual, Modelos chilenas, escorts fotos reales, saunas, call girls. {% endblock meta-keywords %}" />
+        <meta name="author" content="Immersion" />
+        {% block meta %}{% endblock meta %}
+        <link rel="shortcut icon" href="{% static "divina/img/ico/favicon.ico" %}" />
+        <link rel="icon" type="image/png" sizes="192x192" href="{% static "divina/img/ico/iconoandroid.png" %}" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static "divina/img/ico/iconoapple.png" %}" />
+
+    <link rel="stylesheet" href="{% static 'index/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/fonts.css' %}">
+</head>
+<body >
+    <header>
+        <div id="carouselExampleIndicators" class="carousel fade" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active" style="background-image: url('/static/index/img/slide30.jpg')">
+                    <div class="carousel-caption ">
+                        <img class="img-fluid1 " src={% static 'index/img/logodiv.svg' %}>
+                        <h6 class="alinmy">Guía de</h6>
+                        <h6 class="sfproheavy">SCORT PROFESIONALES</h6>
+                        <h6 class="sfproul">PREMIUM CLASS</h6>
+                        <p class="sfnormal">SELECCIONA TU CIUDAD</p>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/rancagua/" class="btn btn-transparent-white" role="button">RANCAGUA</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/curico/" class="btn btn-transparent-white" role="button">CURICO</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/talca/" class="btn btn-transparent-white" role="button">TALCA</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/concepcion/" class="btn btn-transparent-white" role="button">CONCEPCION</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/chillan/" class="btn btn-transparent-white">CHILLAN</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/los-angeles/" class="btn btn-transparent-white">LOS ANGELES</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/temuco/" class="btn btn-transparent-white">TEMUCO</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/pucon/" class="btn btn-transparent-white">PUCON</a>
+                                    </div>
+                                </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/valdivia/" class="btn btn-transparent-white">VALDIVIA</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/osorno/" class="btn btn-transparent-white">OSORNO</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/puerto-montt/" class="btn btn-transparent-white">PUERTO MONTT</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/castro/" class="btn btn-transparent-white">CASTRO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="img-fluid lips" src={% static 'index/img/lips.svg' %}>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('/static/index/img/slide2.jpg')">
+                    <div class="carousel-caption">
+                        <img class="img-fluid1 " src={% static 'index/img/logodiv.svg' %}>
+                        <h6 class="alinmy">Guía de</h6>
+                        <h6 class="sfproheavy">SCORT PROFESIONALES</h6>
+                        <h6 class="sfproul">PREMIUM CLASS</h6>
+                        <p class="sfnormal">SELECCIONA TU CIUDAD</p>
+                            <div class="container">
+                                 <div class="row">
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/rancagua/" class="btn btn-transparent-white" role="button">RANCAGUA</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/curico/" class="btn btn-transparent-white" role="button">CURICO</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/talca/" class="btn btn-transparent-white" role="button">TALCA</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/concepcion/" class="btn btn-transparent-white" role="button">CONCEPCION</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/chillan/" class="btn btn-transparent-white">CHILLAN</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/los-angeles/" class="btn btn-transparent-white">LOS ANGELES</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/temuco/" class="btn btn-transparent-white">TEMUCO</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/pucon/" class="btn btn-transparent-white">PUCON</a>
+                                    </div>
+                                </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/valdivia/" class="btn btn-transparent-white">VALDIVIA</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/osorno/" class="btn btn-transparent-white">OSORNO</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/puerto-montt/" class="btn btn-transparent-white">PUERTO MONTT</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/castro/" class="btn btn-transparent-white">CASTRO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="img-fluid lips" src={% static 'index/img/lips.svg' %}>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('/static/index/img/slide14.jpg')">
+                    <div class="carousel-caption ">
+                        <img class="img-fluid1 " src={% static 'index/img/logodiv.svg' %}>
+                        <h6 class="alinmy">Guía de</h6>
+                        <h6 class="sfproheavy">SCORT PROFESIONALES</h6>
+                        <h6 class="sfproul">PREMIUM CLASS</h6>
+                        <p class="sfnormal">SELECCIONA TU CIUDAD</p>
+                            <div class="container">
+                                 <div class="row">
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/rancagua/" class="btn btn-transparent-white" role="button">RANCAGUA</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/curico/" class="btn btn-transparent-white" role="button">CURICO</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/talca/" class="btn btn-transparent-white" role="button">TALCA</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/concepcion/" class="btn btn-transparent-white" role="button">CONCEPCION</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/chillan/" class="btn btn-transparent-white">CHILLAN</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/los-angeles/" class="btn btn-transparent-white">LOS ANGELES</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/temuco/" class="btn btn-transparent-white">TEMUCO</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/pucon/" class="btn btn-transparent-white">PUCON</a>
+                                    </div>
+                                </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/valdivia/" class="btn btn-transparent-white">VALDIVIA</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/osorno/" class="btn btn-transparent-white">OSORNO</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/puerto-montt/" class="btn btn-transparent-white">PUERTO MONTT</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/castro/" class="btn btn-transparent-white">CASTRO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="img-fluid lips" src={% static 'index/img/lips.svg' %}>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('/static/index/img/slide8.jpg')">
+                    <div class="carousel-caption">
+                        <img class="img-fluid1 " src={% static 'index/img/logodiv.svg' %}>
+                        <h6 class="alinmy">Guía de </h6>
+                        <h6 class="sfproheavy">SCORT PROFESIONALES</h6>
+                        <h6 class="sfproul">PREMIUM CLASS</h6>
+                        <p class="sfnormal">SELECCIONA TU CIUDAD</p>
+                            <div class="container">
+                                  <div class="row">
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/rancagua/" class="btn btn-transparent-white" role="button">RANCAGUA</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/curico/" class="btn btn-transparent-white" role="button">CURICO</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/talca/" class="btn btn-transparent-white" role="button">TALCA</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/concepcion/" class="btn btn-transparent-white" role="button">CONCEPCION</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/chillan/" class="btn btn-transparent-white">CHILLAN</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/los-angeles/" class="btn btn-transparent-white">LOS ANGELES</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/temuco/" class="btn btn-transparent-white">TEMUCO</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/pucon/" class="btn btn-transparent-white">PUCON</a>
+                                    </div>
+                                </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/valdivia/" class="btn btn-transparent-white">VALDIVIA</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/osorno/" class="btn btn-transparent-white">OSORNO</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/puerto-montt/" class="btn btn-transparent-white">PUERTO MONTT</a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="dir/ciudad/castro/" class="btn btn-transparent-white">CASTRO</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="img-fluid lips" src={% static 'index/img/lips.svg' %}>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </header>
+
+
+
+    <script src="{% static 'index/js/jquery-slim.min.js' %}"></script>
+    <script src="{% static 'index/js/popper.min.js' %}"></script>
+    <script src="{% static 'index/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'index/js/bootstrap.js' %}"></script>
+</body>
+</html>

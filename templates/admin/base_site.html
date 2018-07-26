@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a class="justify-content-center" href="{% url 'admin:index' %}">DivinaSur v1.0</a></h1>
+{% endblock %}W
+
+{% block nav-global %}{% endblock %}

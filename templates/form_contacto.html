@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+    <head>
+        {% load i18n %}
+        {% load staticfiles %}
+        {% load static %}
+        <meta charset="UTF-8">
+        <title>DivinaSur | CL</title>
+        <meta name="robots" content="follow, all" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="{% block meta-description %}gía de acompañantes, damas de compañia, scort categoria premium{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
+        <meta name="keywords" content="{% block meta-keywords %}Dmas de compañia, Scort, Chile, Mujeres sensuales, mujeres premmium, sexo. {% endblock meta-keywords %}" />
+        <meta name="author" content="ImmersionVR" />
+        {% block meta %}{% endblock meta %}
+        <link rel="shortcut icon" href="{% static "divina/img/ico/favicon.ico" %}" />
+        <link rel="icon" type="image/png" sizes="192x192" href="{% static "divina/img/ico/iconoandroid.png" %}" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static "divina/img/ico/iconoapple.png" %}" />
+        <link rel="pingback" href="/xmlrpc/" />
+        <link rel="home" href="{% url 'zinnia:entry_archive_index' %}" />
+        <link rel="stylesheet" href="{% static 'index/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'index/css/perfil.css' %}">
+        <link rel="stylesheet" href="{% static 'index/css/fonts.css' %}">
+        {% block link %}{% endblock link %}
+        {% block script %}{% endblock script %}
+    </head>
+
+    <body id="top" class="bg-color14">
+        <header>
+            <nav class="navbar  bg-color19 pb-2 d-sm-none d-sm-block ">
+            </nav>
+            <nav class="navbar bg-color15 navbar-expand-md top-bar navbar-static-top  sps--abv">
+                <div class="container">
+                    <a class="navbar-toggler header__toggle-menu   navbar-toggler-right" title="Menu" data-toggle="modal" data-target="#menuModal" ><link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><i class=" ion-navicon"></i></a>
+                <a href="{% url 'index' %}"><img class="img-fluid-marca nav-bar-marca" src={% static 'index/img/divina-men2.svg' %}></a>
+
+                <nav class=" header__nav-wrap ">
+                <h2 class="header__nav-heading h6">NAVEGACIÓN</h2>
+                <ul class="header__nav">
+                    <li><a href="{% url 'index' %}" title="">PORTADA</a></li>
+
+                    <li class="current"><a href='{% url 'contacto' %}' title="">CONTACTO</a></li>
+                </ul>
+                <a href="{% url 'index' %}"><img class=" img-fluid-marca-nav header__nav-heading " src={% static 'index/img/divina-menu.svg' %}></a>
+                <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+                </nav>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container contacto-box ">
+            <div class="row ">
+                <div class="col-12">
+                    <h6 class="contacto-header">CONTACTO</h6>
+                    <h6 class="contacto-comentario">dudas, sugerencias o si deseas anunciarte, rellena este formulario.</h6>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-8 col-11 ">
+                    <form action="" method="post" class="probootstrap-form">
+                    {% csrf_token %}
+                        <div class="form-group" id="contacto">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                         <label class="lname">NOMBRE</label>
+                                        {{ form.nombre.errors }}
+                                        {{ form.nombre }}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="lname">APELLIDO</label>
+                                        {{ form.apellido.errors }}
+                                        {{ form.apellido }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="lname">EMAIL</label>
+                                        {{ form.email.errors }}
+                                        {{ form.email }}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="lname">TELÉFONO</label>
+                                        {{ form.celular.errors }}
+                                        {{ form.celular }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="lname">MENSAJE</label>
+                                        {{ form.mensaje.errors }}
+                                        {{ form.mensaje }}
+                                    </div>
+                                </div>
+                            </div>
+                        <button type="submit" class="btn2 btn-primary2 mt-2 mr-1">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3 form-control2">
+                <h6 class="lname-detalle ">DETALLE CONTACTO</h6>
+                <div class="contacto-telefono-box justify-content-center">
+                    <a class="contacto-telefono-green pulse-button" href="tel:+56 965106583"><link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><i class="  ion-ios7-telephone"></i></a>
+                </div>
+                <h6 class="contacto-header-detalle">DIVINASUR CONTACTO</h6>
+                <h6 class="contacto-header-detalle-tel" href="tel:+56 965106583">+56 965106583" </h6>
+                <h6 class="lname-detalle-dos">UTILIZO WHATSAPP</h6>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container contacto-box-dos ">
+            <div class="row ">
+                <div class="col-12">
+
+                </div>
+            </div>
+        </div>
+
+
+                <footer class="footer bg-color17 ">
+            <div class="footer-widget-section">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-sm-4 footer-block">
+                            <div class="footer-widget widget_text">
+                                <div class="footer-logo">
+                                    <a href="{% url 'index' %}"><img class="img-fluid9" src={% static 'index/img/divina-men2.svg' %}></a>
+                                </div>
+                                <address class="text-uppercase">
+                                Portal sobre escorts y masajistas para mayores de 18 años.
+                                Todas las anunciantes han sido entrevistadas personalmente.
+                                No poseemos vinculación laboral con las anunciantes y nos limitamos exclusivamente a brindar un servicio publicitario.</address>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 footer-block">
+                            <div class="footer-widget widget_text">
+                                <h3>MAPA DEL SITIO</h3>
+                                <ul class="list-inline">
+                                    <li class="text-uppercase"><a href="{% url 'index' %}">Inicio</a></li>
+                                    <li class="text-uppercase"><a href='{% url 'contacto' %}'>Politicas</a></li>
+                                    <li class="text-uppercase"><a href='{% url 'contacto' %}'>Anunciate</a></li>
+                                    <li class="text-uppercase"><a href='{% url 'contacto' %}'>Contacto</a></li>
+                                </ul>
+                                <h3 class="pt-5">CATEGORÍAS</h3>
+                                <ul class="list-inline">
+                                    <li class="text-uppercase"><a href="#0">Vip</a></li>
+                                    <li class="text-uppercase"><a href="#0">Golden</a></li>
+                                    <li class="text-uppercase"><a href="#0">Premium</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 footer-block last">
+                            <div class="footer-widget widget_text">
+                                <a href="#"><img class="img-fluid mayor18" src={% static 'index/img/mas18.svg' %}></a><br>
+                                <h3>CONTENIDO ADULTO</h3>
+                                <address class="text-uppercase">
+                                Esta es una página de contenido adulto y solo para mayores de 18 años.
+                                Todas las personas que aparecen en esta web son mayores de edad.
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-section bg-color19">
+                <div class="container">
+                    <span class="copytext text-uppercase">&copy; 2018 DivinaSur  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" /><i class="bewweg-3 icon ion-heart"></i>  Todos los derechos reservados</span>
+                </div>
+            </div>
+            <div class="s-footer__bottom">
+                <div class="row">
+                    <div class="col-full">
+                        <div class="go-top">
+                            <a class="smoothscroll" title="Ir Arriba" href="#top"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+    <script src="{% static 'index/js/popper.min.js' %}"></script>
+
+
+    <script src="{% static 'index/js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'index/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'index/js/bootstrap.js' %}"></script>
+    <script src="{% static 'index/js/baguetteBox.js' %}"></script>
+
+    <script type="text/javascript">
+
+
+    baguetteBox.run('.tz-gallery');
+
+    (function($) {
+    "use strict";
+        var cfg = {
+            scrollDuration : 800, // smoothscroll duration
+        },
+        $WIN = $(window);
+        // Add the User Agent to the <html>
+        // will be used for IE10 detection (Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0))
+        var doc = document.documentElement;
+        doc.setAttribute('data-useragent', navigator.userAgent);
+
+           /* Mobile Menu
+    * ---------------------------------------------------- */
+    var clMobileMenu = function() {
+
+        var navWrap = $('.header__nav-wrap'),
+            closeNavWrap = navWrap.find('.header__overlay-close'),
+            menuToggle = $('.header__toggle-menu'),
+            siteBody = $('body');
+
+        menuToggle.on('click', function(e) {
+            var $this = $(this);
+
+            e.preventDefault();
+            e.stopPropagation();
+            siteBody.addClass('nav-wrap-is-visible');
+        });
+
+        closeNavWrap.on('click', function(e) {
+
+            var $this = $(this);
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            if(siteBody.hasClass('nav-wrap-is-visible')) {
+                siteBody.removeClass('nav-wrap-is-visible');
+            }
+        });
+
+        // open (or close) submenu items in mobile view menu.
+        // close all the other open submenu items.
+        $('.header__nav .has-children').children('a').on('click', function (e) {
+            e.preventDefault();
+
+            if ($(".close-mobile-menu").is(":visible") == true) {
+
+                $(this).toggleClass('sub-menu-is-open')
+                    .next('ul')
+                    .slideToggle(200)
+                    .end()
+                    .parent('.has-children')
+                    .siblings('.has-children')
+                    .children('a')
+                    .removeClass('sub-menu-is-open')
+                    .next('ul')
+                    .slideUp(200);
+
+            }
+        });
+
+    };
+
+
+       /* Smooth Scrolling
+        * ------------------------------------------------------ */
+        var clSmoothScroll = function() {
+            $('.smoothscroll').on('click', function (e) {
+                var target = this.hash,
+                $target    = $(target);
+                    e.preventDefault();
+                    e.stopPropagation();
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top
+                }, cfg.scrollDuration, 'swing').promise().done(function () {
+                    // check if menu is open
+                    if ($('body').hasClass('menu-is-open')) {
+                        $('.header-menu-toggle').trigger('click');
+                    }
+                    window.location.hash = target;
+                });
+            });
+        };
+
+       /* Back to Top
+        * ------------------------------------------------------ */
+        var clBackToTop = function() {
+            var pxShow      = 500,
+                goTopButton = $(".go-top")
+            // Show or hide the button
+            if ($(window).scrollTop() >= pxShow) goTopButton.addClass('link-is-visible');
+            $(window).on('scroll', function() {
+                if ($(window).scrollTop() >= pxShow) {
+                    if(!goTopButton.hasClass('link-is-visible')) goTopButton.addClass('link-is-visible')
+                } else {
+                    goTopButton.removeClass('link-is-visible')
+                }
+            });
+        };
+
+       /* Initialize
+        * ------------------------------------------------------ */
+        (function ssInit() {
+            clMobileMenu();
+            clSmoothScroll();
+            clBackToTop();
+        })();
+
+    })(jQuery);
+
+    </script>
+</html>
